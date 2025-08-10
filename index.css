@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-wood: #3a2f2f;
+    --parchment: #fdf6e3;
+    --bronze: #cd7f32;
+    --bronze-dark: #a06528;
+    --text-dark: #4a3f35;
+    --accent-green: #506e54;
+    --accent-red: #9a3e3e;
+  }
+  body {
+    @apply font-lora text-text-dark;
+    background-color: var(--bg-wood);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23332828' fill-opacity='0.4'%3E%3Crect x='0' y='0' width='100' height='1'/%3E%3Crect x='0' y='0' width='1' height='100'/%3E%3C/g%3E%3C/svg%3E");
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .parchment-pane {
+    @apply bg-parchment text-text-dark rounded-lg border-2 border-black/20;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  .bronze-button {
+    @apply inline-flex items-center justify-center font-cinzel font-bold py-3 px-6 rounded-md text-white transition-all duration-200 transform;
+    background: linear-gradient(to bottom, #d58f45, #b8732c);
+    border: 2px solid #a06528;
+    border-bottom-width: 4px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  .bronze-button:hover {
+    @apply brightness-110;
+    transform: translateY(-2px);
+  }
+  .bronze-button:active {
+    transform: translateY(1px);
+    border-bottom-width: 2px;
+  }
+  .bronze-button:disabled {
+    @apply from-gray-500 to-gray-600 border-gray-700 cursor-not-allowed brightness-75;
+    background: linear-gradient(to bottom, #888, #666);
+    border-color: #555;
+    transform: translateY(0);
+  }
+  
+  .bronze-plaque {
+    @apply p-3 text-center rounded-md text-white;
+    background: linear-gradient(to bottom, #bca07c, #a18867);
+    border: 1px solid #856d50;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+  }
+
+  .mode-button {
+    @apply relative z-10 py-2 px-6 rounded-md text-center transition-colors duration-300 font-semibold font-cinzel;
+    @apply border-2 border-transparent text-text-dark/60;
+  }
+  .mode-button.active {
+    @apply text-white;
+    background: linear-gradient(to bottom, #d58f45, #b8732c);
+    border-color: #a06528;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+}
