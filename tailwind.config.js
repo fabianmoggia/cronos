@@ -12,7 +12,7 @@ export default {
         'parchment': 'var(--parchment)',
         'bronze': 'var(--bronze)',
         'bronze-dark': 'var(--bronze-dark)',
-        'text-dark': 'var(--text-dark)',
+        'text-dark': 'rgb(var(--text-dark-rgb) / <alpha-value>)',
         'accent-green': 'var(--accent-green)',
         'accent-red': 'var(--accent-red)',
       },
